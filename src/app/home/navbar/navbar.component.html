@@ -1,0 +1,26 @@
+<nav
+  class="navbar fixed-top navbar-expand navbar-light bg-light shadow-sm bg-white"
+>
+  <a class="navbar-brand" href="#">DIGITALASPART</a>
+  <div class="navbar-nav">
+    <a class="nav-item nav-link" href="#">A</a>
+    <a class="nav-item nav-link" href="#">B</a>
+    <a class="nav-item nav-link" href="#">C</a>
+    <a class="nav-item nav-link" href="#">D</a>
+  </div>
+  <div class="navbar-nav ml-auto">
+    <a class="nav-item nav-link" href="#" i18n="@@navbar-login">Login</a>
+    <a class="nav-item nav-link" href="#" i18n="@@navbar-joinUs">Join Us</a>
+  </div>
+  <button
+    class="btn ml-2"
+    type="button"
+    (click)="toggleSideBar()"
+    aria-label="Toggle navigation"
+  >
+    <span
+      class="navbar-toggler-icon"
+      [ngClass]="{ 'humburger-menu-open': this.isSideMenuOpen }"
+    ></span>
+  </button>
+</nav>

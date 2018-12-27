@@ -1,0 +1,5 @@
+<app-sidebar></app-sidebar>
+<div class="wrapper bg-light" [ngClass]="{'wrapper-open': this.openSideMenu}">
+  <app-navbar></app-navbar>
+  <div class="container p-2" style="margin-top: 56px;"><router-outlet></router-outlet></div>
+</div>

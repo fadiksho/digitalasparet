@@ -1,0 +1,38 @@
+@import '~node_modules/bootstrap/scss/functions';
+@import '~node_modules/bootstrap/scss/variables';
+
+.sidebar {
+  width: 250px;
+  z-index: 3;
+  position: fixed;
+  top: 56px;
+  left: -300px;
+  transition: left 0.5s ease-in-out;
+}
+.reverse-scroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+.reverse-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+}
+.reverse-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 1);
+}
+.reverse-scroll::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 20px;
+}
+
+@media (min-width: map-get($grid-breakpoints, "lg")) {
+  .sidebar {
+    z-index: 1;
+    left: 0;
+  }
+}
+@media (max-width: map-get($grid-breakpoints, "lg")) {
+  .sidebar-open {
+    left: 0;
+  }
+}
