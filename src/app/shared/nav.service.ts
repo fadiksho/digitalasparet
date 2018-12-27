@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Subject, Observable, fromEvent, BehaviorSubject } from 'rxjs';
+import { fromEvent, BehaviorSubject } from 'rxjs';
+import { TransferState } from '@angular/platform-browser';
 
 @Injectable({
   providedIn: 'root'
@@ -12,13 +13,13 @@ export class NavService {
   overSideMenuOpen$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   pushSideMenuOpen$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
-  constructor() {
-    this.innerWidth = window.innerWidth;
-    fromEvent(window, 'resize').subscribe(event => {
-      this.innerWidth = window.innerWidth;
-      this.overSideMenu();
-      this.pushSideMenu();
-    });
+  constructor(private readonly transferState: TransferState) {
+    // this.innerWidth = window.innerWidth;
+    // fromEvent(window, 'resize').subscribe(event => {
+    //   this.innerWidth = window.innerWidth;
+    //   this.overSideMenu();
+    //   this.pushSideMenu();
+    // });
   }
 
   toggleSideMenu() {
