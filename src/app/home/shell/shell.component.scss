@@ -1,9 +1,42 @@
-.wrapper {
-  height: 10000px;
-  z-index: 2;
-  position: relative;
-  transition: margin-left 0.3s ease-in-out;
+.main-container {
+  display: flex;
+  flex-direction: column;
 }
-.wrapper-open {
-  margin-left: 250px;
+
+.main-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 56px;
+  height: 56px;
+  z-index: 5;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .3);
+}
+
+.mat-toolbar-row {
+  padding: 0 16px 0 0;
+}
+
+.sidenav {
+  position: fixed;
+  width: 250px;
+  top: 56px;
+}
+
+.main-content {
+  margin-top: 56px;
+  padding: 1rem 1rem;
+}
+
+.hamburger-menu {
+  height: 100%;
+  margin: 0 8px 0 0;
+  padding: 0;
+
+  .mat-icon {
+    font-size: 40px;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+  }
 }

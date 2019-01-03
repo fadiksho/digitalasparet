@@ -1,18 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { NavService } from '../../shared/nav.service';
+import { Component } from '@angular/core';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-shell',
   templateUrl: './shell.component.html',
   styleUrls: ['./shell.component.scss']
 })
-export class ShellComponent implements OnInit {
-  openSideMenu = false;
-  constructor(private navService: NavService) { }
+export class ShellComponent {
 
-  ngOnInit() {
-    this.navService.pushSideMenuOpen$.subscribe(value => {
-      this.openSideMenu = value;
-    });
-  }
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result => result.matches)
+    );
+
+  constructor(private breakpointObserver: BreakpointObserver) {}
 }
